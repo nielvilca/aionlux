@@ -4,6 +4,7 @@ import * as tf from "@tensorflow/tfjs";
 import * as cocossd from "@tensorflow-models/coco-ssd";
 import Webcam from "react-webcam";
 import { drawRect } from "../utils.js";
+import "../assets/styles/Recognition.scss";
 
 
 function Recognition() {
@@ -19,7 +20,12 @@ function Recognition() {
       detect(net);
     }, 10);
   };
-
+  const videoConstraints = {
+    width: 1200,
+    height: 620,
+    facingMode: "user"
+  };
+  
   const detect = async (net) => {
     // Check data is available
     if (
@@ -53,37 +59,18 @@ function Recognition() {
   useEffect(()=>{runCoco()},[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="cam-container">
+      <header className="webcam-header">
         <Webcam
           ref={webcamRef}
-          muted={true} 
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 9,
-            width: 640,
-            height: 480,
-          }}
+          muted={true}
+          videoConstraints={videoConstraints}
+          className="webcam"
         />
 
         <canvas
           ref={canvasRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 8,
-            width: 640,
-            height: 480,
-          }}
+          className="webcam-canvas"
         />
       </header>
     </div>

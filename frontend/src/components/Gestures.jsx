@@ -9,12 +9,11 @@ import { drawHand } from "../utils.js";
 
 import {loveYouGesture} from "../Fingers.js"; 
 
-///////// NEW STUFF IMPORTS
 import * as fp from "fingerpose";
 import thumbs_up from "../assets/static/gestures/thumbs_up.png";
 import victory from "../assets/static/gestures/victory.png";
 import ily from "../assets/static/gestures/ily.png";
-///////// NEW STUFF IMPORTS
+import "../assets/styles/Recognition.scss";
 
 function Gestures() {
   const webcamRef = useRef(null);
@@ -33,7 +32,11 @@ function Gestures() {
       detect(net);
     }, 10);
   };
-
+  const videoConstraints = {
+    width: 1200,
+    height: 620,
+    facingMode: "user"
+  };
   const detect = async (net) => {
     // Check data is available
     if (
@@ -57,8 +60,6 @@ function Gestures() {
       // Make Detections
       const hand = await net.estimateHands(video);
       // console.log(hand);
-
-      ///////// NEW STUFF ADDED GESTURE HANDLING
 
       if (hand.length > 0) {
         const GE = new fp.GestureEstimator([
@@ -91,21 +92,12 @@ function Gestures() {
   useEffect(()=>{runHandpose()},[]);
 
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="cam-container">
+      <header className="webcam-header">
         <Webcam
           ref={webcamRef}
-          style={{
-            position: "absolute",
-            marginLeft: "auto",
-            marginRight: "auto",
-            left: 0,
-            right: 0,
-            textAlign: "center",
-            zindex: 9,
-            width: 640,
-            height: 480,
-          }}
+          className="webcam"
+          videoConstraints={videoConstraints}
         />
 
         <canvas
@@ -118,11 +110,11 @@ function Gestures() {
             right: 0,
             textAlign: "center",
             zindex: 9,
-            width: 640,
-            height: 480,
+            width: 1200,
+            height: 620,
           }}
         />
-        {/* NEW STUFF */}
+
         {emoji !== null ? (
           <img
             src={images[emoji]}
@@ -130,9 +122,8 @@ function Gestures() {
               position: "absolute",
               marginLeft: "auto",
               marginRight: "auto",
-              left: 400,
-              bottom: 500,
-              right: 0,
+              top: '10%',
+              right: '10%',
               textAlign: "center",
               height: 100,
             }}
@@ -140,8 +131,6 @@ function Gestures() {
         ) : (
           ""
         )}
-
-        {/* NEW STUFF */}
       </header>
     </div>
   );
