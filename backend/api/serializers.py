@@ -1,21 +1,21 @@
 from rest_framework import serializers
-# from contact.models import Product
+from users.models import Product
 from django.contrib.auth.models import User
 
-# class ProductSerializer(serializers.ModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
 
-#     class Meta:
-#         model = Product
-#         fields = [
-#             'id', 
-#             'name', 
-#             'price', 
-#             'mark',
-#             'description', 
-#             'likes', 
-#             'image', 
-#             'created_at',
-#         ]
+    class Meta:
+        model = Product
+        fields = [
+            'id', 
+            'name', 
+            'price', 
+            'mark',
+            'description', 
+            'likes', 
+            'image', 
+            'created_at',
+        ]
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

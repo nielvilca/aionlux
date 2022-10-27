@@ -13,15 +13,15 @@ $buttons_background: #efefef;
 }
 
 .home-footer__ul {
-    display: block;
+    display: flex;
     padding-bottom: 20px;
     padding-right: 40px;
-    border-right: 1px solid rgba(11, 33, 54, 0.42);
 }
 
 .home-footer__li {
     list-style: none;
 }
+
 .home-footer__p {
     color:  $buttons_font_color;
     font-weight: bold;

@@ -1,35 +1,14 @@
 import React, { useState,useEffect } from "react";
 import "../assets/styles/Main.scss";
-import {backendURL, buttonURL} from "../utils.js";
+import {backendURL} from "../utils.js";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from "axios";
 import { Button, Modal} from "react-bootstrap";
 
 const ProductItem= (props) => {
-    const contactURL = buttonURL;
     const [likes, setLikes] = useState(props.likes);
-	const [show, setShow] = useState(false);
-	const handleClose = () => setShow(false);
-	const handleShow = () => setShow(true);
     const class_= "c-item" + ` ${props.in_}`;
-
-    const [multiply, setMultiply] = useState(1);
-
-    const decreaseMultiply = () => {
-        if (multiply <= 1) {
-            setMultiply(1);
-        }else {
-            setMultiply(multiply - 1);
-        }
-    }
-
-    const increaseMultiply = () => {
-            setMultiply(multiply + 1);
-    }
-
-    function numberWithCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
 
     const [isAuth, setIsAuth] = useState(false);
 
@@ -60,71 +39,21 @@ const ProductItem= (props) => {
     return (
         <React.Fragment>
             <div className={class_}>
-               
-                {/* <p className="c-title">
-                   {props.name} - {props.mark}
-                </p> */}
-                {/* <p className="c-price">
-                    S/ {props.price}
-                </p> */}
-                <Button variant="primary" className="c-book" onClick={handleShow}>
-                    <div className="c-image">
-                        <img src={props.image} alt="" />
-                        <button className="heart">
-                            <FontAwesomeIcon icon="fa-solid fa-heart" />
-                            <span style={{marginLeft:'12px'}}>{likes}</span>
-                        </button>
-                    </div>
-                </Button>
-            
-                <Modal show={show} onHide={handleClose} size="lg" centered  style={{ borderRadius: "10px !important",}}>
-                    <Modal.Header closeButton>
-                    {/* <Modal.Title style={{fontWeight: "bold"}}>Reservar Producto</Modal.Title> */}
-                    </Modal.Header>
-                    <Modal.Body >
-                       
-                        <div className="content-modal-elements">
-                            <img className="modal-image" src={props.image} alt="" />
-                            <div style={{margin: "10px 20px", display:'flex', justifyContent: 'center', flexDirection:'column'}}>
-                                {isAuth ? <button className="heart " onClick={makeLike}>
-                                            <FontAwesomeIcon className="heart-scale" icon="fa-solid fa-heart" />
-                                            <span style={{marginLeft:'12px'}} >{likes}</span>
-                                        </button>
-                                    :<button className="heart">
-                                        <FontAwesomeIcon icon="fa-solid fa-heart" />
-                                        <span style={{marginLeft:'12px'}}>{likes}</span>    
-                                    </button>
-                                }
-                                
-                                {/* <p>
-                                Para reservar este producto, usted debe contactarse con nosotros
-                                especificando el producto y su marca en el mensaje
-                                </p> */}
-                                {/* <p className="c-title" style={{fontWeight:"bold"}}> */}
-                                {/* {props.name} - {props.mark} */}
-                                {/* </p> */}
-                                {/* <p className="c-price" style={{textAlign:"center", backgroundColor:"#ffd7bf", padding:"10px 20px", borderRadius: "10px",}}>
-                                    S/ {numberWithCommas(props.price)}
-                                </p>
-                                <div className="c-price total-counter" style={{textAlign:"center"}}>
-                                    <p>
-                                    Total: S/ {numberWithCommas(props.price * multiply)}
-                                    </p>
-                                    <div className="counter-section"> 
-                                        <button className="counter-less" onClick={decreaseMultiply}>-</button>
-                                        <p className="counter-field">{multiply}</p>
-                                        <button className="counter-more" onClick={increaseMultiply}>+</button>
-                                    </div>
-                                </div>  */}
-                                <Button className="modal-contact-button" variant="primary" onClick={() => window.location.href = contactURL}>
-                                    Contactar
-                                </Button>
-                            </div>
-                        </div>
-                       
-                    </Modal.Body>
+                <div className="c-image">
+                    <Link to={"/" + props.name + "/"}>
+                    <img src={props.image} alt="" />
+                    </Link>
                     
-                </Modal>
+                </div>
+                    {/* {isAuth ? <button className="heart " onClick={makeLike}>
+                                <FontAwesomeIcon className="heart-scale" icon="fa-solid fa-heart" />
+                                <span style={{marginLeft:'12px'}} >{likes}</span>
+                            </button>
+                        :<button className="heart" onClick={() => window.location.href = "/login/"}>
+                            <FontAwesomeIcon icon="fa-solid fa-heart" />
+                            <span style={{marginLeft:'12px'}}>{likes}</span>    
+                        </button>
+                    } */}
             </div>
         </React.Fragment>
     );

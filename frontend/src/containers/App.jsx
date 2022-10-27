@@ -12,6 +12,8 @@ import Signup from "../components/Signup";
 import Logout from "../components/Logout";
 import Recognition from "../components/Recognition";
 import Gestures from "../components/Gestures";
+import Products from "../components/Products";
+import Contact from "../components/Contact";
 import '../assets/styles/App.scss';
 
 const App = ()  =>{
@@ -24,12 +26,13 @@ const App = ()  =>{
                 <Routes>
                     <Route exact path="/" element={ <Main/> } />
                     <Route path="/about/" element={<About/>} />
-                    <Route path="/contact/" element={<Main/>} />
+                    <Route path="/contact/" element={<Contact/>} />
                     <Route path="/login/" element={<Login/>} />
                     <Route path="/signup/" element={<Signup/>} />
                     <Route path="/logout/" element={<Logout/>} />
                     <Route path="/re/" element={<Recognition/>} />
                     <Route path="/gts/" element={<Gestures/>} />
+                    <Route path="/begin/" element={<Products/>} />
                 </Routes>
             </div>
         </div>

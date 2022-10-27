@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import '../assets/styles/Header.scss';
-import {buttonURL} from "../utils";
+
 
 const Header = () => {
-  const contactURL = buttonURL;
+  
   // Change background color on scroll
   const changeBackground = () => {
     if (window.scrollY >= 66){
@@ -68,7 +68,7 @@ const Header = () => {
               <img className="nav-bar__logo-image" src=""alt=""/>
                  <span className="nav-bar__logo-text">Aionlux</span>
             </Link>
-            <button className="nav-bar__button-item nav-bar__buttons-item--subscribe nav-bar__buttons-item--subscribe-responsive" onClick={() => window.location.href = contactURL}>Contactar</button>
+            <Link className="nav-bar__button-item nav-bar__buttons-item--subscribe nav-bar__buttons-item--subscribe-responsive" to="/contact/">Contactar</Link>
             
             <div className="nav-bar__display" id="nav-bar__display-id" onClick={ displayResponsive }>
                 <img className="nav-bar__display-icon" src="https://raw.githubusercontent.com/addleonel/ghcenter/59ef2cad24ca811449366d46ee576a8100de17a8/homewc/src/assets/static/icons/bars.svg" alt=""/> 
@@ -76,7 +76,7 @@ const Header = () => {
             
             <div className="nav-bar__buttons">
               
-                <Link className="nav-bar__buttons-item nav-bar__buttons-item--business"  to="/products/">Productos</Link>
+                <Link className="nav-bar__buttons-item nav-bar__buttons-item--business"  to="/begin/">Avances</Link>
                 {/* <button className="nav-bar__button-item nav-bar__buttons-item--subscribe" onClick={() => window.location.href = contactURL}>Contactar</button>                                                                                                          */}
                 {isAuth === true ? (
                   <Fragment>
@@ -96,8 +96,8 @@ const Header = () => {
       <section id="nav-bar__responsive" className="nav-bar__responsive--none"  onClick={ disableMenu }>
         <ul id="nav-bar__responsive-list-id" className="nav-bar__responsive-list" onClick={ enableMenu }>
             <li className="nav-bar__responsive-li" ><Link id="about-res"  onClick={ disableMenu } className="nav-bar__responsive-item" to="/about/">Sobre Nosotros</Link></li>
-            <li className="nav-bar__responsive-li" ><Link id="contact-res" className="nav-bar__responsive-item" to="/contact/" onClick={() => window.location.href = contactURL}>Contacto</Link></li>
-            <li className="nav-bar__responsive-li" ><Link id="products-res"  onClick={ disableMenu } className="nav-bar__responsive-item" to="/products/">Productos</Link></li>
+            <li className="nav-bar__responsive-li" ><Link id="contact-res" onClick={ disableMenu }  className="nav-bar__responsive-item" to="/contact/">Contacto</Link></li>
+            <li className="nav-bar__responsive-li" ><Link id="products-res"  onClick={ disableMenu } className="nav-bar__responsive-item" to="/products/">Avances</Link></li>
         </ul>                                                       
       </section>
     </React.Fragment>

@@ -1,5 +1,5 @@
-$bgcolor_button: #46586f;
-$border_color:  #46586f;
+$bgcolor_button: #03989E;
+$border_color:  #03989E;
 $buttons_font_color: #171933;
 $buttons_font_color_hover: rgba(0, 0, 0, 0.39);
 $buttons_background: #efefef;
@@ -24,6 +24,7 @@ $color_4: #D1E3FC;
     font-weight: bold;
     margin-left: 40px;
     transition: .3s all;
+    text-decoration: none;
 }
 
 .nav-bar__buttons-item--subscribe:hover {
