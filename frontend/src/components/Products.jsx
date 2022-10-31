@@ -4,8 +4,8 @@ import { Container} from "react-bootstrap";
 import "../assets/styles/Main.scss";
 import ProductItem from "./ProductItem";
 import { HashLink } from "react-router-hash-link";
-// import {results
-// } from "../resultList.js";
+import {results
+} from "../resultList.js";
 import axios from "axios";
 import { backendURL } from "../utils";
 
@@ -29,6 +29,7 @@ const Products = () => {
                 <ProductItem 
                     id={link.id}
                     key={link.id}
+                    name={link.name}
                     likes={link.likes.length}
                     image={link.image}
                     in_="in-products"
@@ -40,7 +41,7 @@ const Products = () => {
     
     return (
     <React.Fragment>
-        <section className="section-p section-1">
+        {/* <section className="section-p section-1">
             <Container fluid="xxl">
                 <div className="portal-phrase">
                     <h1 className="portal-title">
@@ -51,10 +52,10 @@ const Products = () => {
                     </p>
                 </div>
             </Container>
-        </section>
+        </section> */}
 
         <Container fluid="xxl" >
-            <div className="products" style={{marginTop: "40px"}}>   
+            <div className="products" style={{marginTop: "100px"}}>   
                 {resultList}
             </div>
                      

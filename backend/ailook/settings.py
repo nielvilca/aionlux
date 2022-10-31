@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration', # new
     'corsheaders', # new
     'api.apps.ApiConfig',
+    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [

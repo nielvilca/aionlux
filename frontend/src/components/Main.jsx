@@ -5,16 +5,15 @@ import { Container } from "react-bootstrap";
 import "../assets/styles/Main.scss";
 // import { Link } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
-import {backendURL, buttonURL} from "../utils.js";
+import {backendURL } from "../utils.js";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // products
 import ProductItem from "./ProductItem";
-import { results
- } from "../resultList.js";
+// import { results
+//  } from "../resultList.js";
 
 const Main = () => {
-	const contactURL = buttonURL;
 	const [productList, setProductList] = useState([]);
 
 	useEffect(()=>{
@@ -53,18 +52,17 @@ const Main = () => {
 					<div className="section-1-content">
 						<div className="portal-phrase">
 							<h1 className="portal-title">
-					
+								Proyecto Aionlux
 							</h1>
 							<p className="portal-subtitle">
-						
-								
+								Es un sistema de gestión de datos en seguridad.
 							</p>
-							{/* <button 
+							<button 
                                 className="principal__message-button"
-                                onClick={() => window.location.href = contactURL}
+                                onClick={() => window.location.href = "/begin/"}
                             >
-                                Contactanos ahora
-                            </button> */}
+								Ver avances
+                            </button>
 						</div>
 						<div className="portal-media">
 							{/* <img className="portal-image pimage-1" src="https://images.pexels.com/photos/10827305/pexels-photo-10827305.jpeg" alt="" />
@@ -74,7 +72,7 @@ const Main = () => {
 					</div>
 				</Container>
 			</section>
-			<section className="section-m section-2">
+			{/* <section className="section-m section-2">
 				<Container fluid="xxl">
 					<h2 className="category">Nuestros resultados</h2>
 					<div className="c-container">
@@ -85,7 +83,7 @@ const Main = () => {
 						<HashLink style={{textDecoration: "none"}} to="/products/">Ver más</HashLink>
 					</div>
 				</Container>
-			</section>
+			</section> */}
 		</React.Fragment>
   );
 }
