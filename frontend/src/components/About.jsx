@@ -32,7 +32,7 @@ const About = () => {
                     <h2>Misión</h2>
                     
                     <p>
-                    
+                    hola gente
                     </p>
                     <h2>Visión</h2>
                     <p>
