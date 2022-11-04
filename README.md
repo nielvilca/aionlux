@@ -1,5 +1,5 @@
-# Project Aionlux
+# aionlux
 
-<div align="center" style="height:400px;">
-    <img src="https://raw.githubusercontent.com/addleonel/aionlux/main/redocs/logo.png">
+<div align="center">
+    <img width="400" height="400" style="border-radius: 50%;" src="https://raw.githubusercontent.com/addleonel/aionlux/main/redocs/logo.png">
 </div> 
