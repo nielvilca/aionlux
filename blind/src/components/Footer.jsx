@@ -1,8 +1,6 @@
 import * as React from "react";
 import "../assets/styles/Footer.scss";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from "react-router-dom";
-import { HashLink } from "react-router-hash-link";
 
 const Footer = () => {
   return (
@@ -14,7 +12,6 @@ const Footer = () => {
             <li className="home-footer__li"><Link  to="/begin/" className="home-footer__link">Avances</Link></li>
         </ul>
     </div>
-    {/* <img className="redwoman" src="" /> */}
     <p className="home-footer__copyright">
       2022 © Aionlux - Reservados todos los derechos
     </p>

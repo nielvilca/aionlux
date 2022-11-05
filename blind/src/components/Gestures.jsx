@@ -1,7 +1,4 @@
-
-
 import React, { useRef, useState, useEffect } from "react";
-
 import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
@@ -18,16 +15,11 @@ import "../assets/styles/Recognition.scss";
 function Gestures() {
   const webcamRef = useRef(null);
   const canvasRef = useRef(null);
-
-  ///////// NEW STUFF ADDED STATE HOOK
   const [emoji, setEmoji] = useState(null);
   const images = { thumbs_up: thumbs_up, victory: victory, i_love_you:  ily};
-  ///////// NEW STUFF ADDED STATE HOOK
-
   const runHandpose = async () => {
     const net = await handpose.load();
     console.log("Handpose model loaded.");
-    //  Loop and detect hands
     setInterval(() => {
       detect(net);
     }, 10);
@@ -77,12 +69,10 @@ function Gestures() {
           const maxConfidence = confidence.indexOf(
             Math.max.apply(null, confidence)
           );
-          // console.log(gesture.gestures[maxConfidence].name);
           setEmoji(gesture.gestures[maxConfidence].name);
           console.log(emoji);
         }
       }
-
       // Draw mesh
       const ctx = canvasRef.current.getContext("2d");
       drawHand(hand, ctx);
