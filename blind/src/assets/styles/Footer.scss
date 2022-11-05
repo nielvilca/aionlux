@@ -1,6 +1,5 @@
 $buttons_font_color: #0A2540;
 $buttons_font_color_hover: rgba(0, 0, 0, 0.39);
-$buttons_background: #efefef;
 
 .home-footer {
     position: relative;
@@ -22,15 +21,7 @@ $buttons_background: #efefef;
     list-style: none;
 }
 
-.home-footer__p {
-    color:  $buttons_font_color;
-    font-weight: bold;
-    font-size: 14px;
-    letter-spacing: 0.055em;
-    margin: 10px 20px;
-}
-
-.home-footer__link, .home-footer__p {
+.home-footer__link {
     text-decoration: none;
     color:  $buttons_font_color;
     font-weight: bold;
@@ -52,38 +43,9 @@ $buttons_background: #efefef;
     padding-bottom: 20px;
 }
 
-.social-media {
-    height: 40px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-
-.social-media-link {
-    font-size: 30px;
-    margin: 0 20px;
-    // background-color: green;
-}
-
-.redwoman {
-    width: 600px;
-    height: 400px;
-    position: absolute;
-    bottom: -120px;
-    right: 0%;
-    z-index: 1;
-    filter: saturate(68%) brightness(1.2);
-}
-
 
 @media screen and (max-width: 1286px) {
-    .redwoman {
-        width: 400px;
-        height: auto;
-        bottom: 100%;
-        right: 0;
-    }
+    
 }
 
 @media screen and (max-width: 750px) {
@@ -97,12 +59,6 @@ $buttons_background: #efefef;
         align-items: center;
         border: none;
         text-align: center;
-    }
-    .redwoman {
-        width: 200px;
-        height: auto;
-        bottom: 100%;
-        right: 0;
     }
 }
 

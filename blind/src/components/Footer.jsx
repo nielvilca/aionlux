@@ -13,7 +13,7 @@ const Footer = () => {
         </ul>
     </div>
     <p className="home-footer__copyright">
-      2022 © Aionlux - Reservados todos los derechos
+      2022 &#169; Aionlux - Todos los derechos reservados
     </p>
     </React.Fragment>
   );
