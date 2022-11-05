@@ -1,5 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
-import * as tf from "@tensorflow/tfjs";
+// import * as tf from "@tensorflow/tfjs";
 import * as handpose from "@tensorflow-models/handpose";
 import Webcam from "react-webcam";
 import { drawHand } from "../utils.js";
@@ -10,7 +10,7 @@ import * as fp from "fingerpose";
 import thumbs_up from "../assets/static/gestures/thumbs_up.png";
 import victory from "../assets/static/gestures/victory.png";
 import ily from "../assets/static/gestures/ily.png";
-import "../assets/styles/Recognition.scss";
+import "../assets/styles/Gestures.scss";
 
 function Gestures() {
   const webcamRef = useRef(null);
